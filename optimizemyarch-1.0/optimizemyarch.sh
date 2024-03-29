@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration file path
-config_file="$HOME/.oma_config"
+config_file="$HOME/.config/oma/.config"
 
 # Function to display initialization prompt
 display_init_prompt() {
@@ -219,11 +219,12 @@ fi
 
 
     # Save configuration to a file
-    echo "desktop_environment=\"$desktop_environment\"" >> "$HOME/.oma_config"
-    echo "disk_type=\"$disk_type\"" >> "$HOME/.oma_config"
-    echo "aur_helper=\"$aur_helper\"" >> "$HOME/.oma_config"
-    echo "purpose=\"$purpose\"" >> "$HOME/.oma_config"
-    echo "optimize_purpose=\"$optimize_purpose\"" >> "$HOME/.oma_config"
+    mkdir -p "$HOME/.config/oma"
+    echo "desktop_environment=\"$desktop_environment\"" >> "$config_file"
+    echo "disk_type=\"$disk_type\"" >> "$config_file"
+    echo "aur_helper=\"$aur_helper\"" >> "$config_file"
+    echo "purpose=\"$purpose\"" >> "$config_file"
+    echo "optimize_purpose=\"$optimize_purpose\"" >> "$config_file"
 }
 
 # Function to load configuration from file
@@ -232,7 +233,7 @@ load_config() {
 }
 
 # Check if configuration file exists
-if [ ! -f "$HOME/.oma_config" ]; then
+if [ ! -f "$config_file" ]; then
     perform_init
     exit 0
 fi

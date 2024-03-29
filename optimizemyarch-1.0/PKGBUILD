@@ -8,7 +8,7 @@ url="https://github.com/MrAshCreates/optimizemyarch"
 license=('MIT')
 depends=('bash')
 source=("optimizemyarch.sh")
-sha256sums=('0d880b735b58d42582b1cdf0bb7f9fdb5f013f929a013f0b6913a3149790141f')
+sha256sums=('39bfb476971b62800077315077a8a0bf574a4ac3b29ce51c13186ce26caddd82')
 
 package() {
     install -Dm755 optimizemyarch.sh "$pkgdir/usr/bin/oma"
