@@ -1,0 +1,15 @@
+# Maintainer: Asher Winstead asher@mrashcreates.xyz
+pkgname=optimizemyarch
+pkgver=1.0
+pkgrel=1
+pkgdesc="A script to optimize and maintain Arch Linux installations"
+arch=('any')
+url="https://github.com/MrAshCreates/optimizemyarch"
+license=('MIT')
+depends=('bash')
+source=("optimizemyarch.sh")
+sha256sums=('0d880b735b58d42582b1cdf0bb7f9fdb5f013f929a013f0b6913a3149790141f')
+
+package() {
+    install -Dm755 optimizemyarch.sh "$pkgdir/usr/bin/oma"
+}
